@@ -1,0 +1,18 @@
+rule AI_new_theme_php_23310515 : ai_generated critical
+{
+    meta:
+        description  = "The file contains a web shell allowing arbitrary command execution and file manipulation."
+        verdict      = "CONFIRMED MALICIOUS"
+        category     = "Web Shell"
+        severity     = "Critical"
+        source_file  = "backup/test/new-theme.php"
+        job_id       = "8c616541-f94b-4d7d-9a4b-688413ad13b0"
+        generated_at = "2026-04-20T17:41:58.032990+00:00"
+        ai_generated = true
+
+    strings:
+        $s0 = "backup/test/new-theme.php" nocase ascii wide
+
+    condition:
+        any of them
+}
